@@ -1,0 +1,8 @@
+.\output\py32f072c_ll_utils.o: ..\Drivers\PY32F072C_HAL_Driver\Src\py32f072c_ll_utils.c
+.\output\py32f072c_ll_utils.o: ..\Drivers\PY32F072C_HAL_Driver\Inc\py32f072c_ll_utils.h
+.\output\py32f072c_ll_utils.o: C:\Users\emre.karabek\AppData\Local\Arm\Packs\Puya\PY32F0xx_DFP\1.2.2\Drivers\CMSIS\Device\PY32F0xx\Include\py32f0xx.h
+.\output\py32f072c_ll_utils.o: C:\Users\emre.karabek\AppData\Local\Arm\Packs\Puya\PY32F0xx_DFP\1.2.2\Drivers\CMSIS\Device\PY32F0xx\Include\py32f072cxB.h
+.\output\py32f072c_ll_utils.o: C:\Users\emre.karabek\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include\core_cm0plus.h
+.\output\py32f072c_ll_utils.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\py32f072c_ll_utils.o: C:\Users\emre.karabek\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include\cmsis_version.h
+.\output\py32f072c_ll_utils.o: C:\Users\emre.karabek\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include\cmsis_compiler.h

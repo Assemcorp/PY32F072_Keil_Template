@@ -18,6 +18,7 @@ Section Cross References
     system_py32f072c.o(i.SystemCoreClockUpdate) refers to system_py32f072c.o(.constdata) for HSIFreqTable
     main.o(i.APP_GpioConfig) refers to memseta.o(.text) for __aeabi_memclr4
     main.o(i.APP_GpioConfig) refers to py32f072c_hal_gpio.o(i.HAL_GPIO_Init) for HAL_GPIO_Init
+    main.o(i.APP_GpioConfig) refers to py32f072c_hal_gpio.o(i.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
     main.o(i.main) refers to py32f072c_hal.o(i.HAL_Init) for HAL_Init
     main.o(i.main) refers to main.o(i.APP_GpioConfig) for APP_GpioConfig
     main.o(i.main) refers to py32f072c_hal.o(i.HAL_Delay) for HAL_Delay
@@ -288,7 +289,6 @@ Removing Unused input sections from the image.
     Removing py32f072c_hal_gpio.o(i.HAL_GPIO_EXTI_IRQHandler), (32 bytes).
     Removing py32f072c_hal_gpio.o(i.HAL_GPIO_LockPin), (50 bytes).
     Removing py32f072c_hal_gpio.o(i.HAL_GPIO_ReadPin), (18 bytes).
-    Removing py32f072c_hal_gpio.o(i.HAL_GPIO_WritePin), (12 bytes).
     Removing py32f072c_hal_pwr.o(.rev16_text), (4 bytes).
     Removing py32f072c_hal_pwr.o(.revsh_text), (4 bytes).
     Removing py32f072c_hal_pwr.o(i.HAL_PWR_ConfigBIAS), (60 bytes).
@@ -411,7 +411,7 @@ Removing Unused input sections from the image.
     Removing py32f072c_hal_dma.o(i.HAL_DMA_UnRegisterCallback), (108 bytes).
     Removing py32f072c_hal_dma.o(i.__ARM_common_switch8), (28 bytes).
 
-197 unused section(s) (total 16405 bytes) removed from the image.
+196 unused section(s) (total 16393 bytes) removed from the image.
 
 ==============================================================================
 
@@ -423,7 +423,6 @@ Image Symbol Table
 
     ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
@@ -431,6 +430,7 @@ Image Symbol Table
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
@@ -484,29 +484,30 @@ Image Symbol Table
     .text                                    0x0800011c   Section        0  memseta.o(.text)
     .text                                    0x08000140   Section       36  init.o(.text)
     i.APP_GpioConfig                         0x08000164   Section        0  main.o(i.APP_GpioConfig)
-    APP_GpioConfig                           0x08000165   Thumb Code    66  main.o(i.APP_GpioConfig)
-    i.HAL_Delay                              0x080001b0   Section        0  py32f072c_hal.o(i.HAL_Delay)
-    i.HAL_GPIO_Init                          0x080001dc   Section        0  py32f072c_hal_gpio.o(i.HAL_GPIO_Init)
-    i.HAL_GPIO_TogglePin                     0x080003a0   Section        0  py32f072c_hal_gpio.o(i.HAL_GPIO_TogglePin)
-    i.HAL_GetTick                            0x080003b0   Section        0  py32f072c_hal.o(i.HAL_GetTick)
-    i.HAL_IncTick                            0x080003bc   Section        0  py32f072c_hal.o(i.HAL_IncTick)
-    i.HAL_Init                               0x080003d4   Section        0  py32f072c_hal.o(i.HAL_Init)
-    i.HAL_InitTick                           0x080003f0   Section        0  py32f072c_hal.o(i.HAL_InitTick)
-    i.HAL_MspInit                            0x08000450   Section        0  py32f072c_hal_msp.o(i.HAL_MspInit)
-    i.HAL_NVIC_SetPriority                   0x08000494   Section        0  py32f072c_hal_cortex.o(i.HAL_NVIC_SetPriority)
-    i.HAL_SYSTICK_Config                     0x080004a8   Section        0  py32f072c_hal_cortex.o(i.HAL_SYSTICK_Config)
-    i.HardFault_Handler                      0x080004e0   Section        0  py32f072c_it.o(i.HardFault_Handler)
-    i.NMI_Handler                            0x080004e4   Section        0  py32f072c_it.o(i.NMI_Handler)
-    i.PendSV_Handler                         0x080004e6   Section        0  py32f072c_it.o(i.PendSV_Handler)
-    i.SVC_Handler                            0x080004e8   Section        0  py32f072c_it.o(i.SVC_Handler)
-    i.SysTick_Handler                        0x080004ea   Section        0  py32f072c_it.o(i.SysTick_Handler)
-    i.SystemInit                             0x080004f4   Section        0  system_py32f072c.o(i.SystemInit)
-    i.__NVIC_SetPriority                     0x08000530   Section        0  py32f072c_hal_cortex.o(i.__NVIC_SetPriority)
-    __NVIC_SetPriority                       0x08000531   Thumb Code   110  py32f072c_hal_cortex.o(i.__NVIC_SetPriority)
-    i.__scatterload_copy                     0x080005a8   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x080005b6   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x080005b8   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i.main                                   0x080005c8   Section        0  main.o(i.main)
+    APP_GpioConfig                           0x08000165   Thumb Code   162  main.o(i.APP_GpioConfig)
+    i.HAL_Delay                              0x08000210   Section        0  py32f072c_hal.o(i.HAL_Delay)
+    i.HAL_GPIO_Init                          0x0800023c   Section        0  py32f072c_hal_gpio.o(i.HAL_GPIO_Init)
+    i.HAL_GPIO_TogglePin                     0x08000400   Section        0  py32f072c_hal_gpio.o(i.HAL_GPIO_TogglePin)
+    i.HAL_GPIO_WritePin                      0x08000410   Section        0  py32f072c_hal_gpio.o(i.HAL_GPIO_WritePin)
+    i.HAL_GetTick                            0x0800041c   Section        0  py32f072c_hal.o(i.HAL_GetTick)
+    i.HAL_IncTick                            0x08000428   Section        0  py32f072c_hal.o(i.HAL_IncTick)
+    i.HAL_Init                               0x08000440   Section        0  py32f072c_hal.o(i.HAL_Init)
+    i.HAL_InitTick                           0x0800045c   Section        0  py32f072c_hal.o(i.HAL_InitTick)
+    i.HAL_MspInit                            0x080004bc   Section        0  py32f072c_hal_msp.o(i.HAL_MspInit)
+    i.HAL_NVIC_SetPriority                   0x08000500   Section        0  py32f072c_hal_cortex.o(i.HAL_NVIC_SetPriority)
+    i.HAL_SYSTICK_Config                     0x08000514   Section        0  py32f072c_hal_cortex.o(i.HAL_SYSTICK_Config)
+    i.HardFault_Handler                      0x0800054c   Section        0  py32f072c_it.o(i.HardFault_Handler)
+    i.NMI_Handler                            0x08000550   Section        0  py32f072c_it.o(i.NMI_Handler)
+    i.PendSV_Handler                         0x08000552   Section        0  py32f072c_it.o(i.PendSV_Handler)
+    i.SVC_Handler                            0x08000554   Section        0  py32f072c_it.o(i.SVC_Handler)
+    i.SysTick_Handler                        0x08000556   Section        0  py32f072c_it.o(i.SysTick_Handler)
+    i.SystemInit                             0x08000560   Section        0  system_py32f072c.o(i.SystemInit)
+    i.__NVIC_SetPriority                     0x0800059c   Section        0  py32f072c_hal_cortex.o(i.__NVIC_SetPriority)
+    __NVIC_SetPriority                       0x0800059d   Thumb Code   110  py32f072c_hal_cortex.o(i.__NVIC_SetPriority)
+    i.__scatterload_copy                     0x08000614   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x08000622   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x08000624   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.main                                   0x08000634   Section        0  main.o(i.main)
     .data                                    0x20000000   Section        4  system_py32f072c.o(.data)
     .data                                    0x20000004   Section       12  py32f072c_hal.o(.data)
     STACK                                    0x20000010   Section     1024  startup_py32f072cxx.o(STACK)
@@ -578,28 +579,29 @@ Image Symbol Table
     _memset$wrapper                          0x0800012f   Thumb Code    18  memseta.o(.text)
     __scatterload                            0x08000141   Thumb Code    28  init.o(.text)
     __scatterload_rt2                        0x08000141   Thumb Code     0  init.o(.text)
-    HAL_Delay                                0x080001b1   Thumb Code    38  py32f072c_hal.o(i.HAL_Delay)
-    HAL_GPIO_Init                            0x080001dd   Thumb Code   438  py32f072c_hal_gpio.o(i.HAL_GPIO_Init)
-    HAL_GPIO_TogglePin                       0x080003a1   Thumb Code    16  py32f072c_hal_gpio.o(i.HAL_GPIO_TogglePin)
-    HAL_GetTick                              0x080003b1   Thumb Code     6  py32f072c_hal.o(i.HAL_GetTick)
-    HAL_IncTick                              0x080003bd   Thumb Code    16  py32f072c_hal.o(i.HAL_IncTick)
-    HAL_Init                                 0x080003d5   Thumb Code    26  py32f072c_hal.o(i.HAL_Init)
-    HAL_InitTick                             0x080003f1   Thumb Code    82  py32f072c_hal.o(i.HAL_InitTick)
-    HAL_MspInit                              0x08000451   Thumb Code    64  py32f072c_hal_msp.o(i.HAL_MspInit)
-    HAL_NVIC_SetPriority                     0x08000495   Thumb Code    18  py32f072c_hal_cortex.o(i.HAL_NVIC_SetPriority)
-    HAL_SYSTICK_Config                       0x080004a9   Thumb Code    46  py32f072c_hal_cortex.o(i.HAL_SYSTICK_Config)
-    HardFault_Handler                        0x080004e1   Thumb Code     4  py32f072c_it.o(i.HardFault_Handler)
-    NMI_Handler                              0x080004e5   Thumb Code     2  py32f072c_it.o(i.NMI_Handler)
-    PendSV_Handler                           0x080004e7   Thumb Code     2  py32f072c_it.o(i.PendSV_Handler)
-    SVC_Handler                              0x080004e9   Thumb Code     2  py32f072c_it.o(i.SVC_Handler)
-    SysTick_Handler                          0x080004eb   Thumb Code     8  py32f072c_it.o(i.SysTick_Handler)
-    SystemInit                               0x080004f5   Thumb Code    42  system_py32f072c.o(i.SystemInit)
-    __scatterload_copy                       0x080005a9   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x080005b7   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x080005b9   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    main                                     0x080005c9   Thumb Code    26  main.o(i.main)
-    Region$$Table$$Base                      0x080005e8   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08000608   Number         0  anon$$obj.o(Region$$Table)
+    HAL_Delay                                0x08000211   Thumb Code    38  py32f072c_hal.o(i.HAL_Delay)
+    HAL_GPIO_Init                            0x0800023d   Thumb Code   438  py32f072c_hal_gpio.o(i.HAL_GPIO_Init)
+    HAL_GPIO_TogglePin                       0x08000401   Thumb Code    16  py32f072c_hal_gpio.o(i.HAL_GPIO_TogglePin)
+    HAL_GPIO_WritePin                        0x08000411   Thumb Code    12  py32f072c_hal_gpio.o(i.HAL_GPIO_WritePin)
+    HAL_GetTick                              0x0800041d   Thumb Code     6  py32f072c_hal.o(i.HAL_GetTick)
+    HAL_IncTick                              0x08000429   Thumb Code    16  py32f072c_hal.o(i.HAL_IncTick)
+    HAL_Init                                 0x08000441   Thumb Code    26  py32f072c_hal.o(i.HAL_Init)
+    HAL_InitTick                             0x0800045d   Thumb Code    82  py32f072c_hal.o(i.HAL_InitTick)
+    HAL_MspInit                              0x080004bd   Thumb Code    64  py32f072c_hal_msp.o(i.HAL_MspInit)
+    HAL_NVIC_SetPriority                     0x08000501   Thumb Code    18  py32f072c_hal_cortex.o(i.HAL_NVIC_SetPriority)
+    HAL_SYSTICK_Config                       0x08000515   Thumb Code    46  py32f072c_hal_cortex.o(i.HAL_SYSTICK_Config)
+    HardFault_Handler                        0x0800054d   Thumb Code     4  py32f072c_it.o(i.HardFault_Handler)
+    NMI_Handler                              0x08000551   Thumb Code     2  py32f072c_it.o(i.NMI_Handler)
+    PendSV_Handler                           0x08000553   Thumb Code     2  py32f072c_it.o(i.PendSV_Handler)
+    SVC_Handler                              0x08000555   Thumb Code     2  py32f072c_it.o(i.SVC_Handler)
+    SysTick_Handler                          0x08000557   Thumb Code     8  py32f072c_it.o(i.SysTick_Handler)
+    SystemInit                               0x08000561   Thumb Code    42  system_py32f072c.o(i.SystemInit)
+    __scatterload_copy                       0x08000615   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x08000623   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x08000625   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    main                                     0x08000635   Thumb Code    82  main.o(i.main)
+    Region$$Table$$Base                      0x0800068c   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x080006ac   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x20000000   Data           4  system_py32f072c.o(.data)
     uwTick                                   0x20000004   Data           4  py32f072c_hal.o(.data)
     uwTickPrio                               0x20000008   Data           4  py32f072c_hal.o(.data)
@@ -614,9 +616,9 @@ Memory Map of the image
 
   Image Entry point : 0x080000c1
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00000618, Max: 0x00020000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000006bc, Max: 0x00020000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00000608, Max: 0x00020000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000006ac, Max: 0x00020000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -634,41 +636,42 @@ Memory Map of the image
     0x080000f0   0x080000f0   0x0000002c   Code   RO         1374    .text               mc_p.l(uidiv.o)
     0x0800011c   0x0800011c   0x00000024   Code   RO         1378    .text               mc_p.l(memseta.o)
     0x08000140   0x08000140   0x00000024   Code   RO         1396    .text               mc_p.l(init.o)
-    0x08000164   0x08000164   0x0000004c   Code   RO          113    i.APP_GpioConfig    main.o
-    0x080001b0   0x080001b0   0x0000002c   Code   RO          320    i.HAL_Delay         py32f072c_hal.o
-    0x080001dc   0x080001dc   0x000001c4   Code   RO          612    i.HAL_GPIO_Init     py32f072c_hal_gpio.o
-    0x080003a0   0x080003a0   0x00000010   Code   RO          615    i.HAL_GPIO_TogglePin  py32f072c_hal_gpio.o
-    0x080003b0   0x080003b0   0x0000000c   Code   RO          323    i.HAL_GetTick       py32f072c_hal.o
-    0x080003bc   0x080003bc   0x00000018   Code   RO          329    i.HAL_IncTick       py32f072c_hal.o
-    0x080003d4   0x080003d4   0x0000001a   Code   RO          330    i.HAL_Init          py32f072c_hal.o
-    0x080003ee   0x080003ee   0x00000002   PAD
-    0x080003f0   0x080003f0   0x00000060   Code   RO          331    i.HAL_InitTick      py32f072c_hal.o
-    0x08000450   0x08000450   0x00000044   Code   RO          154    i.HAL_MspInit       py32f072c_hal_msp.o
-    0x08000494   0x08000494   0x00000012   Code   RO          521    i.HAL_NVIC_SetPriority  py32f072c_hal_cortex.o
-    0x080004a6   0x080004a6   0x00000002   PAD
-    0x080004a8   0x080004a8   0x00000038   Code   RO          525    i.HAL_SYSTICK_Config  py32f072c_hal_cortex.o
-    0x080004e0   0x080004e0   0x00000004   Code   RO          174    i.HardFault_Handler  py32f072c_it.o
-    0x080004e4   0x080004e4   0x00000002   Code   RO          175    i.NMI_Handler       py32f072c_it.o
-    0x080004e6   0x080004e6   0x00000002   Code   RO          176    i.PendSV_Handler    py32f072c_it.o
-    0x080004e8   0x080004e8   0x00000002   Code   RO          177    i.SVC_Handler       py32f072c_it.o
-    0x080004ea   0x080004ea   0x00000008   Code   RO          178    i.SysTick_Handler   py32f072c_it.o
-    0x080004f2   0x080004f2   0x00000002   PAD
-    0x080004f4   0x080004f4   0x0000003c   Code   RO           13    i.SystemInit        system_py32f072c.o
-    0x08000530   0x08000530   0x00000078   Code   RO          527    i.__NVIC_SetPriority  py32f072c_hal_cortex.o
-    0x080005a8   0x080005a8   0x0000000e   Code   RO         1400    i.__scatterload_copy  mc_p.l(handlers.o)
-    0x080005b6   0x080005b6   0x00000002   Code   RO         1401    i.__scatterload_null  mc_p.l(handlers.o)
-    0x080005b8   0x080005b8   0x0000000e   Code   RO         1402    i.__scatterload_zeroinit  mc_p.l(handlers.o)
-    0x080005c6   0x080005c6   0x00000002   PAD
-    0x080005c8   0x080005c8   0x00000020   Code   RO          114    i.main              main.o
-    0x080005e8   0x080005e8   0x00000020   Data   RO         1398    Region$$Table       anon$$obj.o
+    0x08000164   0x08000164   0x000000ac   Code   RO          113    i.APP_GpioConfig    main.o
+    0x08000210   0x08000210   0x0000002c   Code   RO          320    i.HAL_Delay         py32f072c_hal.o
+    0x0800023c   0x0800023c   0x000001c4   Code   RO          612    i.HAL_GPIO_Init     py32f072c_hal_gpio.o
+    0x08000400   0x08000400   0x00000010   Code   RO          615    i.HAL_GPIO_TogglePin  py32f072c_hal_gpio.o
+    0x08000410   0x08000410   0x0000000c   Code   RO          616    i.HAL_GPIO_WritePin  py32f072c_hal_gpio.o
+    0x0800041c   0x0800041c   0x0000000c   Code   RO          323    i.HAL_GetTick       py32f072c_hal.o
+    0x08000428   0x08000428   0x00000018   Code   RO          329    i.HAL_IncTick       py32f072c_hal.o
+    0x08000440   0x08000440   0x0000001a   Code   RO          330    i.HAL_Init          py32f072c_hal.o
+    0x0800045a   0x0800045a   0x00000002   PAD
+    0x0800045c   0x0800045c   0x00000060   Code   RO          331    i.HAL_InitTick      py32f072c_hal.o
+    0x080004bc   0x080004bc   0x00000044   Code   RO          154    i.HAL_MspInit       py32f072c_hal_msp.o
+    0x08000500   0x08000500   0x00000012   Code   RO          521    i.HAL_NVIC_SetPriority  py32f072c_hal_cortex.o
+    0x08000512   0x08000512   0x00000002   PAD
+    0x08000514   0x08000514   0x00000038   Code   RO          525    i.HAL_SYSTICK_Config  py32f072c_hal_cortex.o
+    0x0800054c   0x0800054c   0x00000004   Code   RO          174    i.HardFault_Handler  py32f072c_it.o
+    0x08000550   0x08000550   0x00000002   Code   RO          175    i.NMI_Handler       py32f072c_it.o
+    0x08000552   0x08000552   0x00000002   Code   RO          176    i.PendSV_Handler    py32f072c_it.o
+    0x08000554   0x08000554   0x00000002   Code   RO          177    i.SVC_Handler       py32f072c_it.o
+    0x08000556   0x08000556   0x00000008   Code   RO          178    i.SysTick_Handler   py32f072c_it.o
+    0x0800055e   0x0800055e   0x00000002   PAD
+    0x08000560   0x08000560   0x0000003c   Code   RO           13    i.SystemInit        system_py32f072c.o
+    0x0800059c   0x0800059c   0x00000078   Code   RO          527    i.__NVIC_SetPriority  py32f072c_hal_cortex.o
+    0x08000614   0x08000614   0x0000000e   Code   RO         1400    i.__scatterload_copy  mc_p.l(handlers.o)
+    0x08000622   0x08000622   0x00000002   Code   RO         1401    i.__scatterload_null  mc_p.l(handlers.o)
+    0x08000624   0x08000624   0x0000000e   Code   RO         1402    i.__scatterload_zeroinit  mc_p.l(handlers.o)
+    0x08000632   0x08000632   0x00000002   PAD
+    0x08000634   0x08000634   0x00000058   Code   RO          114    i.main              main.o
+    0x0800068c   0x0800068c   0x00000020   Data   RO         1398    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08000608, Size: 0x00000410, Max: 0x00004000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x080006ac, Size: 0x00000410, Max: 0x00004000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08000608   0x00000004   Data   RW           15    .data               system_py32f072c.o
-    0x20000004   0x0800060c   0x0000000c   Data   RW          345    .data               py32f072c_hal.o
+    0x20000000   0x080006ac   0x00000004   Data   RW           15    .data               system_py32f072c.o
+    0x20000004   0x080006b0   0x0000000c   Data   RW          345    .data               py32f072c_hal.o
     0x20000010        -       0x00000400   Zero   RW            1    STACK               startup_py32f072cxx.o
 
 
@@ -679,17 +682,17 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       108         16          0          0          0       1291   main.o
-       202         34          0         12          0       3793   py32f072c_hal.o
-       194         20          0          0          0       9868   py32f072c_hal_cortex.o
-       468         14          0          0          0       2153   py32f072c_hal_gpio.o
-        68          4          0          0          0        794   py32f072c_hal_msp.o
-        18          0          0          0          0       2079   py32f072c_it.o
-        28          8        192          0       1024        628   startup_py32f072cxx.o
-        60         18          0          4          0     261988   system_py32f072c.o
+       260         16          0          0          0       1431   main.o
+       202         34          0         12          0       3753   py32f072c_hal.o
+       194         20          0          0          0       9844   py32f072c_hal_cortex.o
+       480         14          0          0          0       2753   py32f072c_hal_gpio.o
+        68          4          0          0          0        782   py32f072c_hal_msp.o
+        18          0          0          0          0       2055   py32f072c_it.o
+        28          8        192          0       1024        624   startup_py32f072cxx.o
+        60         18          0          4          0     261956   system_py32f072c.o
 
     ----------------------------------------------------------------------
-      1152        114        224         16       1024     282594   Object Totals
+      1316        114        224         16       1024     283198   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          6          0          0          0          0          0   (incl. Padding)
 
@@ -730,15 +733,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      1320        130        224         16       1024     282326   Grand Totals
-      1320        130        224         16       1024     282326   ELF Image Totals
-      1320        130        224         16          0          0   ROM Totals
+      1484        130        224         16       1024     282886   Grand Totals
+      1484        130        224         16       1024     282886   ELF Image Totals
+      1484        130        224         16          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 1544 (   1.51kB)
+    Total RO  Size (Code + RO Data)                 1708 (   1.67kB)
     Total RW  Size (RW Data + ZI Data)              1040 (   1.02kB)
-    Total ROM Size (Code + RO Data + RW Data)       1560 (   1.52kB)
+    Total ROM Size (Code + RO Data + RW Data)       1724 (   1.68kB)
 
 ==============================================================================
 
